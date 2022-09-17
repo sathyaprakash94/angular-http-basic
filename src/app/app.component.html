@@ -1,0 +1,22 @@
+<h3>Angular HTTP</h3>
+
+<button (click)="getPosts()">Get Post</button>
+
+<div *ngIf="sResponse">
+  <table>
+    <thead>
+      <tr>
+        <th width="50px">S.No</th>
+        <th width="200px">Title</th>
+        <th width="300px">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts | async">
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
